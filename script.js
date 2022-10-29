@@ -12,6 +12,7 @@ checkIcon.addEventListener("click", function(){
     createNote();
 })
 
+
 function typeNote(){
     if(container3.style.display == "none"){
         container3.style.display = "block";
@@ -22,11 +23,12 @@ function typeNote(){
     }
 }
 
+
 function createNote(){
     var noteText = document.getElementById("note-text").value;
     var node0 = document.createElement("div");
     var node1 = document.createElement("h1");
-    
+
 
     node1.innerHTML = noteText;
 
@@ -36,7 +38,10 @@ function createNote(){
     node1.style.backgroundColor = color()
     container3.style.display = "none";
 
-
+    function EditNote(){
+        NT = window.prompt('The Note Currently Says "' + noteText + '"');
+        node1.innerHTML = NT;
+    }
     node0.appendChild(node1);
     container2.insertAdjacentElement("beforeend",node0);
 
@@ -47,12 +52,17 @@ function createNote(){
         node0.style.transform = "scale(1)";
     })
 
-    node0.addEventListener("dblclick", function(){
+    node0.addEventListener("dblclick", function(event){
         node0.remove();
+    })
+
+    node0.addEventListener('contextmenu', function(){
+        EditNote();
     })
 
     document.getElementById("note-text").value = "";
 }
+
 
 function margin(){
     var random_margin = ["-5px", "1px", "5px", "10px", "15px", "20px"];
