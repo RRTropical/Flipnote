@@ -39,10 +39,8 @@ function createNote(){
     container3.style.display = "none";
 
     function EditNote(){
-        NT = window.prompt('The Note Currently Says "' + noteText + '"');
+        NT = window.prompt("What would you like to change this note text to?");
         node1.innerHTML = NT;
-        noteText = NT;
-
     }
     node0.appendChild(node1);
     container2.insertAdjacentElement("beforeend",node0);
