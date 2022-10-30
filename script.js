@@ -56,7 +56,8 @@ function createNote(){
         node0.remove();
     })
 
-    node0.addEventListener('contextmenu', function(){
+    node0.addEventListener('contextmenu', function(event){
+        event.preventDefault();
         EditNote();
     })
 
