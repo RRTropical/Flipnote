@@ -40,7 +40,12 @@ function createNote(){
 
     function EditNote(){
         NT = window.prompt("What would you like to change this note text to?");
+        if (NT.startsWith("+"))
+        {
+            node1.innerHTML = node1.innerHTML + NT.replace("+", "")
+        }else{
         node1.innerHTML = NT;
+        }
     }
     node0.appendChild(node1);
     container2.insertAdjacentElement("beforeend",node0);
