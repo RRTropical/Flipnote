@@ -64,7 +64,7 @@ function createNote(){
     function EditNote(){
         if(container3.style.display == "none"){
             container3.style.display = "block";
-            document.getElementById('note-text').value = noteText
+            document.getElementById('note-text').value = node1.innerHTML
             document.getElementById("note-text").placeholder="Edit Note..."
         }
         else{
