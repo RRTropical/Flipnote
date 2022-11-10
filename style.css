@@ -61,3 +61,12 @@ svg{
     right: 5%;
     top: 4%;
 }
+
+
+#pfp{
+    height: 55px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-radius: 50%;
+}
