@@ -70,3 +70,7 @@ svg{
     right: 0px;
     border-radius: 50%;
 }
+
+#Note{
+    overflow-wrap: break-word;
+}
