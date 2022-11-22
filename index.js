@@ -41,6 +41,7 @@ function createNote(){
     var noteText = document.getElementById("note-text").value;
     var node0 = document.createElement("div");
     var node1 = document.createElement("h1");
+    node1.id = "Note";
     node1.innerHTML = noteText;
     node1.setAttribute("style", "width:250px; height:250px; font-size:26px; padding:26px; margin-top:10px; overflow:hidden; box-shadow:0px 10px 24px 0px rgba(0,0,0,0.75)");
     node1.style.margin = margin();
