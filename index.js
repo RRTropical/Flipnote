@@ -50,6 +50,7 @@ function createNote(NoteValue){
     node1.style.margin = margin();
     node1.style.transform = rotate();
     node1.style.backgroundColor = color()
+    node1.style.backgroundColor = color()
     container3.style.display = "none";
     localStorage.setItem(document.getElementById('note-text').value, document.getElementById('note-text').value);
 
@@ -140,6 +141,7 @@ if(values.length != 0){
     for(let i=0; i < values.length; i++){
         if (values[i] != ""){
             createNote(values[i]);
+            
     }else{
         localStorage.removeItem('');
     }   }
