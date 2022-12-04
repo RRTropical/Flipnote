@@ -6,6 +6,7 @@ var i = 0
 IsEditing = false
 var EDN = "?" 
 
+
 xIcon.addEventListener("click", function(){
     typeNote();
     IsEditing = false
@@ -16,11 +17,13 @@ checkIcon.addEventListener("click", function(){
     if (IsEditing == true){
         IsEditing = false
         var noteText = document.getElementById("note-text").value;
+        localStorage.removeItem(EDN.innerHTML);
         EDN.innerHTML = noteText
+        localStorage.setItem(EDN.innerHTML, EDN.innerHTML)
         container3.style.display = "none";
         document.getElementById('note-text').placeholder="Write Note..."
     }else{
-        createNote();
+        createNote(document.getElementById("note-text").value);
     }
 })
 
@@ -37,18 +40,23 @@ function typeNote(){
 }
 
 
-function createNote(){
+function createNote(NoteValue){
     var noteText = document.getElementById("note-text").value;
     var node0 = document.createElement("div");
     var node1 = document.createElement("h1");
     node1.id = "Note";
-    node1.innerHTML = noteText;
+    node1.innerHTML = NoteValue;
     node1.setAttribute("style", "width:250px; height:250px; font-size:26px; padding:26px; margin-top:10px; overflow:hidden; box-shadow:0px 10px 24px 0px rgba(0,0,0,0.75)");
     node1.style.margin = margin();
     node1.style.transform = rotate();
     node1.style.backgroundColor = color()
     container3.style.display = "none";
+    localStorage.setItem(document.getElementById('note-text').value, document.getElementById('note-text').value);
 
+    if(node1.innerHTML == ""){
+        alert("You may not post empty notes.");
+        return
+    }
     //function EditNote(){
         //NT = window.prompt("What would you like to change this note text to?");
         //if (NT.startsWith("+"))
@@ -84,6 +92,7 @@ function createNote(){
     })
 
     node0.addEventListener("dblclick", function(event){
+        localStorage.removeItem(node1.innerHTML)
         node0.remove();
     })
 
@@ -117,4 +126,21 @@ function color(){
         i = 0;
     }
     return random_color[i++];
+}
+
+
+var values = [],
+keys = Object.keys(localStorage),
+i = keys.length;
+
+while ( i-- ) {
+values.push( localStorage.getItem(keys[i]) );
+}
+if(values.length != 0){
+    for(let i=0; i < values.length; i++){
+        if (values[i] != ""){
+            createNote(values[i]);
+    }else{
+        localStorage.removeItem('');
+    }   }
 }
