@@ -12,13 +12,13 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://rrtropical.github.io/Flipnote/" />
 <meta property="og:description" content="A Website For Notes.. Basically Virtual Sticky Notes!" />
-<meta name="theme-color" content="#FF0000">
+<meta name="theme-color" content="#ADD3EF">
 <meta content="imgs/IC3.png" property="og:image"/>
 </head>
 <body>
     <div class="main-container">
         <div class="container1">
-            <button class="btn btn-success" onclick="typeNote()">Create Note</button>
+            <button class="btn btn-success" id="cnote" onclick="typeNote()">Create Note</button>
         </div>
         <div class="container2"></div>
         <div class="container3">
@@ -34,9 +34,15 @@
         </div>
     </div>
     <script defer src="index.js"></script>
-    <a href="./UDN.html">
+    <br>
+    <a href="./UDN.html" id="update-log-btn">
         <button>Update Log</button>
     </a>
+    <br>
+    <a href="https://discord.gg/27y9Bjr2da" id="discord-btn">
+        <button>Join My Discord</button>
+    </a>
+    
     <img id="pfp" src="test profiles/Blank.png" alt="Profile Picture">
 </body>
 </html>
