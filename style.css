@@ -74,3 +74,10 @@ svg{
 #Note{
     overflow-wrap: break-word;
 }
+
+
+#cnote{
+    position: absolute;
+    left: 0%;
+    top: 0.3%;
+}
