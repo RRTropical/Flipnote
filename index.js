@@ -97,6 +97,7 @@ function createNote(NoteValue){
         node0.remove();
     })
 
+
     node0.addEventListener('contextmenu', function(event){
         event.preventDefault();
         IsEditing = true
@@ -146,3 +147,10 @@ if(values.length != 0){
         localStorage.removeItem('');
     }   }
 }
+
+
+setInterval(function checkPath(){
+    if(window.location.pathname == '/index.html'){
+        window.location.pathname = '/'
+    }
+}, 1)
