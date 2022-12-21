@@ -114,10 +114,10 @@ function createNote(NoteValue){
         isClicked = false //variable change
     })
     node0.addEventListener('touchstart', function(event){ //Start click
+        event.preventDefault();
         isClicked = true //variable change
         setTimeout(function() { //Wait a few seconds
             if(isClicked){ //If you're still holding
-                event.preventDefault();
                 IsEditing = true
                 EDN = node1
                 EditNote(); //You're holding
@@ -129,7 +129,8 @@ function createNote(NoteValue){
     node0.addEventListener('mouseup', function(){ //Stop click
         isClicked = false //variable change
     })
-    node0.addEventListener('touchend', function(){ //Stop click
+    node0.addEventListener('touchend', function(event){ //Stop click
+        event.preventDefault();
         isClicked = false //variable change
     })
     //Comments were to explain this peice of code to a non-programmer.
