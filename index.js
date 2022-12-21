@@ -5,7 +5,7 @@ var xIcon = document.getElementById("x-icon");
 var i = 0
 IsEditing = false
 var EDN = "?" 
-
+let isClicked = false
 
 xIcon.addEventListener("click", function(){
     typeNote();
@@ -53,7 +53,6 @@ function createNote(NoteValue){
     node1.style.backgroundColor = color()
     container3.style.display = "none";
     localStorage.setItem(document.getElementById('note-text').value, document.getElementById('note-text').value);
-
     if(node1.innerHTML == ""){
         alert("You may not post empty notes.");
         return
@@ -97,6 +96,25 @@ function createNote(NoteValue){
         node0.remove();
     })
 
+
+    node0.addEventListener('mousedown', function(event){ //Start click
+        isClicked = true //variable change
+        setTimeout(function() { //Wait a few seconds
+            if(isClicked){ //If you're still holding
+                event.preventDefault();
+                IsEditing = true
+                EDN = node1
+                EditNote(); //You're holding
+            }else{ //If not holding
+                return //Do nothing
+            }
+        }, 700 /*700 = almost a second*/)
+    })
+    node0.addEventListener('mouseup', function(){ //Stop click
+        isClicked = false //variable change
+    })
+
+    //Comments were to explain this peice of code to a non-programmer.
 
     node0.addEventListener('contextmenu', function(event){
         event.preventDefault();
