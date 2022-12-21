@@ -120,13 +120,11 @@ function createNote(NoteValue){
             if(isClicked){ //If you're still holding
                 IsEditing = true
                 EDN = node1
-                EditNote(); //You're holding
-            }else{ //If not holding
-                return //Do nothing
+                EditNote();
             }
         }, 700 /*700 = almost a second*/)
     })
-    node0.addEventListener('mouseup', function(){ //Stop click
+    node0.addEventListener('mouseup', function(){ //Stop click-
         isClicked = false //variable change
     })
     node0.addEventListener('touchend', function(event){ //Stop click
