@@ -113,7 +113,25 @@ function createNote(NoteValue){
     node0.addEventListener('mouseup', function(){ //Stop click
         isClicked = false //variable change
     })
-
+    node0.addEventListener('touchstart', function(event){ //Start click
+        isClicked = true //variable change
+        setTimeout(function() { //Wait a few seconds
+            if(isClicked){ //If you're still holding
+                event.preventDefault();
+                IsEditing = true
+                EDN = node1
+                EditNote(); //You're holding
+            }else{ //If not holding
+                return //Do nothing
+            }
+        }, 700 /*700 = almost a second*/)
+    })
+    node0.addEventListener('mouseup', function(){ //Stop click
+        isClicked = false //variable change
+    })
+    node0.addEventListener('touchend', function(){ //Stop click
+        isClicked = false //variable change
+    })
     //Comments were to explain this peice of code to a non-programmer.
 
     node0.addEventListener('contextmenu', function(event){
@@ -124,6 +142,8 @@ function createNote(NoteValue){
     })
 
     document.getElementById("note-text").value = "";
+
+
 }
 
 
