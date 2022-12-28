@@ -106,7 +106,7 @@ function createNote(NoteValue){
                 EDN = node1
                 EditNote(); //You're holding
             }else{ //If not holding
-                return //Do nothing
+                node0.remove(); //Delete the note/node
             }
         }, 700 /*700 = almost a second*/)
     })
