@@ -321,7 +321,7 @@ function createGameAdvertisement(NoteValue){
         event.preventDefault();
 })
    node0.addEventListener('click', function(){
-        window.open('tropicalrr.itch.io/beware-the-asteroid');
+        window.location.replace(“tropicalrr.itch.io/beware-the-asteroid”)
 })
 }
 function options(){
