@@ -216,6 +216,9 @@ function createOption1(NoteValue){
     node0.addEventListener('dblclick', function(event){
         event.preventDefault();
 })
+node0.addEventListener('click', function(){
+    isClicked = false;
+})
    node0.addEventListener('click', function(){
         isClicked = false;
         window.location.pathname = '/UDN.html';
@@ -246,6 +249,9 @@ function createOption2(NoteValue){
 })
     node0.addEventListener('dblclick', function(event){
         event.preventDefault();
+})
+node0.addEventListener('click', function(){
+    isClicked = false;
 })
    node0.addEventListener('click', function(){
         isClicked = false;
@@ -278,12 +284,15 @@ function createOption3(NoteValue){
     node0.addEventListener('dblclick', function(event){
         event.preventDefault();
 })
+node0.addEventListener('click', function(){
+    isClicked = false;
+})
    node0.addEventListener('click', function(){
         isClicked = false;
         window.location.pathname = "/about me.html";
 })
 }
-function createGameAdvertisement(NoteValue){
+function createGameAdvertisement(){
     var node0 = document.createElement('div');
     var node1 = document.createElement('h1');
     node1.id = 'Note';
@@ -308,6 +317,9 @@ function createGameAdvertisement(NoteValue){
 })
     node0.addEventListener('dblclick', function(event){
         event.preventDefault();
+})
+node0.addEventListener('click', function(){
+    isClicked = false;
 })
    node0.addEventListener('click', function(){
     isClicked = false;
