@@ -139,7 +139,6 @@ function createNote(NoteValue){
         EDN = node1
         EditNote();
     })
-
     document.getElementById("note-text").value = "";
 
 
@@ -218,6 +217,7 @@ function createOption1(NoteValue){
         event.preventDefault();
 })
    node0.addEventListener('click', function(){
+        isClicked = false;
         window.location.pathname = '/UDN.html';
 })
 }
@@ -248,6 +248,7 @@ function createOption2(NoteValue){
         event.preventDefault();
 })
    node0.addEventListener('click', function(){
+        isClicked = false;
         window.open('https://discord.gg/27y9Bjr2da');
 })
 }
@@ -278,6 +279,7 @@ function createOption3(NoteValue){
         event.preventDefault();
 })
    node0.addEventListener('click', function(){
+        isClicked = false;
         window.location.pathname = "/about me.html";
 })
 }
@@ -308,6 +310,7 @@ function createGameAdvertisement(NoteValue){
         event.preventDefault();
 })
    node0.addEventListener('click', function(){
+    isClicked = false;
     window.open('https://tropicalrr.itch.io/beware-the-asteroid');
 })
 }
