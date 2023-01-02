@@ -190,4 +190,109 @@ setInterval(function checkPath(){
     if(window.location.pathname == '/index.html'){
         window.location.pathname = '/'
     }
-}, 1)
+}, 500)
+function createOption1(NoteValue){
+    var node0 = document.createElement('div');
+    var node1 = document.createElement('h1');
+    node1.id = 'Note';
+    node1.innerHTML = NoteValue;
+    node1.setAttribute('style', 'width:250px; height:250px; font-size:26px; padding:26px; margin-top:10px; overflow:hidden; box-shadow:0px 10px 24px 0px rgba(0,0,0,0.75)');
+    node1.style.margin = margin();
+    node1.style.transform = rotate();
+    node1.style.backgroundColor = color()
+    node1.style.backgroundColor = color()
+    container3.style.display = 'none';
+    node0.appendChild(node1);
+    container2.insertAdjacentElement('beforeend',node0);
+
+    node0.addEventListener('mouseenter', function(){
+        node0.style.transform = 'scale(1.1)';
+    })
+    node0.addEventListener('mouseleave', function(){
+        node0.style.transform = 'scale(1)';
+    })
+    node0.addEventListener('click', function(){ //Stop click
+        isClicked = false //variable change
+    })
+    node0.addEventListener('contextmenu', function(event){
+        event.preventDefault();
+})
+    node0.addEventListener('dblclick', function(event){
+        event.preventDefault();
+})
+   node0.addEventListener('click', function(){
+        window.location.pathname = '/UDN.html';
+})
+}
+function createOption2(NoteValue){
+    var node0 = document.createElement('div');
+    var node1 = document.createElement('h1');
+    node1.id = 'Note';
+    node1.innerHTML = NoteValue;
+    node1.setAttribute('style', 'width:250px; height:250px; font-size:26px; padding:26px; margin-top:10px; overflow:hidden; box-shadow:0px 10px 24px 0px rgba(0,0,0,0.75)');
+    node1.style.margin = margin();
+    node1.style.transform = rotate();
+    node1.style.backgroundColor = color()
+    node1.style.backgroundColor = color()
+    container3.style.display = 'none';
+    node0.appendChild(node1);
+    container2.insertAdjacentElement('beforeend',node0);
+
+    node0.addEventListener('mouseenter', function(){
+        node0.style.transform = 'scale(1.1)';
+    })
+    node0.addEventListener('mouseleave', function(){
+        node0.style.transform = 'scale(1)';
+    })
+    node0.addEventListener('click', function(){ //Stop click
+        isClicked = false //variable change
+    })
+    node0.addEventListener('contextmenu', function(event){
+        event.preventDefault();
+})
+    node0.addEventListener('dblclick', function(event){
+        event.preventDefault();
+})
+   node0.addEventListener('click', function(){
+        //alert('discord...');
+        window.open('https://discord.gg/27y9Bjr2da');
+})
+}
+function createOption3(NoteValue){
+    var node0 = document.createElement('div');
+    var node1 = document.createElement('h1');
+    node1.id = 'Note';
+    node1.innerHTML = NoteValue;
+    node1.setAttribute('style', 'width:250px; height:250px; font-size:26px; padding:26px; margin-top:10px; overflow:hidden; box-shadow:0px 10px 24px 0px rgba(0,0,0,0.75)');
+    node1.style.margin = margin();
+    node1.style.transform = rotate();
+    node1.style.backgroundColor = color()
+    node1.style.backgroundColor = color()
+    container3.style.display = 'none';
+    node0.appendChild(node1);
+    container2.insertAdjacentElement('beforeend',node0);
+
+    node0.addEventListener('mouseenter', function(){
+        node0.style.transform = 'scale(1.1)';
+    })
+    node0.addEventListener('mouseleave', function(){
+        node0.style.transform = 'scale(1)';
+    })
+    node0.addEventListener('click', function(){ //Stop click
+        isClicked = false //variable change
+    })
+    node0.addEventListener('contextmenu', function(event){
+        event.preventDefault();
+})
+    node0.addEventListener('dblclick', function(event){
+        event.preventDefault();
+})
+   node0.addEventListener('click', function(){
+        window.location.pathname = "/about me.html";
+})
+}
+function options(){
+    createOption1('Click to go to the Update Log.');
+    createOption2('Click to join my discord.');
+    createOption3('Click to view the About Me section.');
+}
