@@ -107,6 +107,7 @@ function createNote(NoteValue){
                 EditNote(); //You're holding
             }else{ //If not holding
                 node0.remove(); //Delete the note/node
+                localStorage.removeItem(node1.innerHTML)
             }
         }, 700 /*700 = almost a second*/)
     })
@@ -123,6 +124,7 @@ function createNote(NoteValue){
                 EditNote();
             }else{ //If not holding
                 node0.remove(); //Delete the note/node
+                localStorage.removeItem(node1.innerHTML)
             }
         }, 700 /*700 = almost a second*/)
     })
