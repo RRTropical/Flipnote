@@ -291,7 +291,7 @@ function createOption3(NoteValue){
         window.location.pathname = "/about me.html";
 })
 }
-function createGameAdvertisement(NoteValue){
+function createGameAdvertisement(){
     var node0 = document.createElement('div');
     var node1 = document.createElement('h1');
     node1.id = 'Note';
