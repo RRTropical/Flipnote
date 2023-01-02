@@ -106,8 +106,8 @@ function createNote(NoteValue){
                 EDN = node1
                 EditNote(); //You're holding
             }else{ //If not holding
-                node0.remove(); //Delete the note/node
                 localStorage.removeItem(node1.innerHTML)
+                node0.remove(); //Delete the note/node
             }
         }, 700 /*700 = almost a second*/)
     })
@@ -123,8 +123,8 @@ function createNote(NoteValue){
                 EDN = node1
                 EditNote();
             }else{ //If not holding
-                node0.remove(); //Delete the note/node
                 localStorage.removeItem(node1.innerHTML)
+                node0.remove(); //Delete the note/node
             }
         }, 700 /*700 = almost a second*/)
     })
