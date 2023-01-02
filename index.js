@@ -211,9 +211,6 @@ function createOption1(NoteValue){
     node0.addEventListener('mouseleave', function(){
         node0.style.transform = 'scale(1)';
     })
-    node0.addEventListener('click', function(){ //Stop click
-        isClicked = false //variable change
-    })
     node0.addEventListener('contextmenu', function(event){
         event.preventDefault();
 })
@@ -244,9 +241,6 @@ function createOption2(NoteValue){
     node0.addEventListener('mouseleave', function(){
         node0.style.transform = 'scale(1)';
     })
-    node0.addEventListener('click', function(){ //Stop click
-        isClicked = false //variable change
-    })
     node0.addEventListener('contextmenu', function(event){
         event.preventDefault();
 })
@@ -254,7 +248,6 @@ function createOption2(NoteValue){
         event.preventDefault();
 })
    node0.addEventListener('click', function(){
-        //alert('discord...');
         window.open('https://discord.gg/27y9Bjr2da');
 })
 }
@@ -278,9 +271,6 @@ function createOption3(NoteValue){
     node0.addEventListener('mouseleave', function(){
         node0.style.transform = 'scale(1)';
     })
-    node0.addEventListener('click', function(){ //Stop click
-        isClicked = false //variable change
-    })
     node0.addEventListener('contextmenu', function(event){
         event.preventDefault();
 })
@@ -291,7 +281,7 @@ function createOption3(NoteValue){
         window.location.pathname = "/about me.html";
 })
 }
-function createGameAdvertisement(){
+function createGameAdvertisement(NoteValue){
     var node0 = document.createElement('div');
     var node1 = document.createElement('h1');
     node1.id = 'Note';
@@ -311,9 +301,6 @@ function createGameAdvertisement(){
     node0.addEventListener('mouseleave', function(){
         node0.style.transform = 'scale(1)';
     })
-    node0.addEventListener('click', function(){ //Stop click
-        isClicked = false //variable change
-    })
     node0.addEventListener('contextmenu', function(event){
         event.preventDefault();
 })
@@ -321,7 +308,7 @@ function createGameAdvertisement(){
         event.preventDefault();
 })
    node0.addEventListener('click', function(){
-        window.location.replace(“tropicalrr.itch.io/beware-the-asteroid”)
+    window.open('https://tropicalrr.itch.io/beware-the-asteroid');
 })
 }
 function options(){
