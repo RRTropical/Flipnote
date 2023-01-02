@@ -220,7 +220,6 @@ node0.addEventListener('click', function(){
     isClicked = false;
 })
    node0.addEventListener('click', function(){
-        isClicked = false;
         window.location.pathname = '/UDN.html';
 })
 }
@@ -254,7 +253,6 @@ node0.addEventListener('click', function(){
     isClicked = false;
 })
    node0.addEventListener('click', function(){
-        isClicked = false;
         window.open('https://discord.gg/27y9Bjr2da');
 })
 }
@@ -288,7 +286,6 @@ node0.addEventListener('click', function(){
     isClicked = false;
 })
    node0.addEventListener('click', function(){
-        isClicked = false;
         window.location.pathname = "/about me.html";
 })
 }
@@ -322,7 +319,6 @@ node0.addEventListener('click', function(){
     isClicked = false;
 })
    node0.addEventListener('click', function(){
-    isClicked = false;
     window.open('https://tropicalrr.itch.io/beware-the-asteroid');
 })
 }
