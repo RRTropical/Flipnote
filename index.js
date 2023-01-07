@@ -1,3 +1,8 @@
+fetch('index.html')
+    .then(response => response.text())
+    .then(text => {
+        const defaultBodyCode = text
+    })
 var container2 = document.getElementsByClassName("container2")[0];
 var container3 = document.getElementsByClassName("container3")[0];
 var checkIcon = document.getElementById("check-icon");
@@ -6,6 +11,19 @@ var i = 0
 IsEditing = false
 var EDN = "?" 
 let isClicked = false
+const navBar = {
+    shown: true,
+    hide: function(){
+        document.body.style.overflow = "hidden"
+        this.shown = false;
+    },
+    show: function(){
+        document.body.style.overflow = "scroll"
+        this.shown = true;
+    }
+}
+
+navBar.hide()
 
 xIcon.addEventListener("click", function(){
     typeNote();
@@ -26,7 +44,6 @@ checkIcon.addEventListener("click", function(){
         createNote(document.getElementById("note-text").value);
     }
 })
-
 
 function typeNote(){
     if(container3.style.display == "none"){
@@ -170,30 +187,6 @@ function color(){
     return random_color[i++];
 }
 
-
-var values = [],
-keys = Object.keys(localStorage),
-i = keys.length;
-
-while ( i-- ) {
-values.push( localStorage.getItem(keys[i]) );
-}
-if(values.length != 0){
-    for(let i=0; i < values.length; i++){
-        if (values[i] != ""){
-            createNote(values[i]);
-            
-    }else{
-        localStorage.removeItem('');
-    }   }
-}
-
-
-setInterval(function checkPath(){
-    if(window.location.pathname == '/index.html'){
-        window.location.pathname = '/'
-    }
-}, 500)
 function createOption1(NoteValue){
     var node0 = document.createElement('div');
     var node1 = document.createElement('h1');
@@ -290,7 +283,8 @@ node0.addEventListener('click', function(){
     isClicked = false;
 })
    node0.addEventListener('click', function(){
-        window.location.pathname = "/about me.html";
+        //window.location.pathname = "/about me.html";
+        aboutMe()
 })
 }
 function createGameAdvertisement(){
@@ -326,13 +320,95 @@ node0.addEventListener('click', function(){
     window.open('https://tropicalrr.itch.io/beware-the-asteroid');
 })
 }
+function createResetButton(NoteValue){
+    var node0 = document.createElement('div');
+    var node1 = document.createElement('h1');
+    node1.id = 'Note';
+    node1.innerHTML = NoteValue;
+    node1.setAttribute('style', 'width:250px; height:250px; font-size:26px; padding:26px; margin-top:10px; overflow:hidden; box-shadow:0px 10px 24px 0px rgba(0,0,0,0.75)');
+    node1.style.margin = margin();
+    node1.style.transform = rotate();
+    node1.style.backgroundColor = color()
+    node1.style.backgroundColor = color()
+    container3.style.display = 'none';
+    node0.appendChild(node1);
+    container2.insertAdjacentElement('beforeend',node0);
+
+    node0.addEventListener('mouseenter', function(){
+        node0.style.transform = 'scale(1.1)';
+    })
+    node0.addEventListener('mouseleave', function(){
+        node0.style.transform = 'scale(1)';
+    })
+    node0.addEventListener('contextmenu', function(event){
+        event.preventDefault()
+})
+    node0.addEventListener('dblclick', function(event){
+        event.preventDefault();
+})
+node0.addEventListener('click', function(){
+    isClicked = false;
+})
+   node0.addEventListener('click', function(){
+        window.location.reload()
+})
+}
 function options(){
+    hideAllNotes()
+    navBar.show()
     createOption1('Click to go to the Update Log.');
     createOption2('Click to join my discord.');
     createOption3('Click to view the About Me section.');
-    //actual options
     createGameAdvertisement();
-    //advertising my game LOL
+    createResetButton("Click to go back to Flipnote.")
 }
 
-// hi whoever's reading
+
+var values = [],
+keys = Object.keys(localStorage),
+i = keys.length;
+
+while ( i-- ) {
+values.push( localStorage.getItem(keys[i]) );
+}
+if(values.length != 0){
+    for(let i=0; i < values.length; i++){
+        if (values[i] != ""){
+            createNote(values[i]);
+            
+    }else{
+        localStorage.removeItem('');
+    }   }
+}
+
+
+setInterval(function checkPath(){
+    if(window.location.pathname == '/index.html'){
+        window.location.pathname = '/'
+    }
+}, 500)
+
+function aboutMe()
+{
+fetch('about me.html')
+ .then(response => response.text())
+ .then(text => {
+    const aboutMeCode = text
+    document.body.innerHTML = aboutMeCode
+ })
+}
+
+function hideAllNotes()
+{
+    let elements = document.getElementsByTagName("*");
+    for (let i = 0; i < elements.length; i++) {
+      if (elements[i].id == "Note") {
+        elements[i].remove();
+      }
+    }
+      
+}
+
+
+//Hey there whoever's reading
+
