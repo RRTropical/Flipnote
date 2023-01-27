@@ -435,7 +435,7 @@ button1.addEventListener("click", function(){
 });
 
 button2.addEventListener("click", function(){
-    localStorage.removeItem(document.getElementById('optionsnote').innerText)
+    localStorage.removeItem(node)
     document.getElementById('optionsnote').remove()
     node.id = 'Note'
     popup.close()
