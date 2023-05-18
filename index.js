@@ -49,6 +49,7 @@ function typeNote(){
     if(container3.style.display == "none"){
         document.getElementById("note-text").value = ""
         container3.style.display = "block";
+        document.getElementById('note-text').focus()
     }
     else{
         container3.style.display = "none";
@@ -71,7 +72,6 @@ function createNote(NoteValue){
     container3.style.display = "none";
     localStorage.setItem(document.getElementById('note-text').value, document.getElementById('note-text').value);
     if(node1.innerHTML == ""){
-        alert("You may not post empty notes.");
         return
     }
     //function EditNote(){
@@ -91,6 +91,8 @@ function createNote(NoteValue){
         if(container3.style.display == "none"){
             container3.style.display = "block";
             document.getElementById('note-text').value = node1.innerHTML
+            document.getElementById('note-text').focus()
+            document.getElementById('note-text').select()
             document.getElementById("note-text").placeholder="Edit Note..."
         }
         else{
@@ -358,7 +360,7 @@ values.push( localStorage.getItem(keys[i]) );
 }
 if(values.length != 0){
     for(let i=0; i < values.length; i++){
-        if (values[i] != ""){
+        if (values[i] != "" && values[i] != 'honey:core-sdk:*'){
             createNote(values[i]);
             
     }else{
@@ -394,13 +396,7 @@ function hideAllNotes()
       
 }
 
-
 //Hey there whoever's reading
-
-
-
-
-
 
 function popup(node){
 node.id = 'optionsnote'
@@ -435,7 +431,7 @@ button1.addEventListener("click", function(){
 });
 
 button2.addEventListener("click", function(){
-    localStorage.removeItem(node)
+    localStorage.removeItem(document.getElementById('optionsnote').innerText)
     document.getElementById('optionsnote').remove()
     node.id = 'Note'
     popup.close()
@@ -451,4 +447,5 @@ function unselectText(){
       }
       
 }
-//bro why are you still reading?
+
+
