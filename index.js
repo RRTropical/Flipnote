@@ -70,7 +70,15 @@ setInterval(function(){
         document.removeEventListener('keydown', enterDown)
     }
 })
-
+document.addEventListener('keydown', function(event){
+    if(event.key == 'c' && event.ctrlKey){
+        event.preventDefault()
+        typeNote()
+    }else if(event.key == 'o' && event.ctrlKey){
+        event.preventDefault()
+        options()
+    }
+})
 
 function typeNote(){
     if(container3.style.display == "none"){
@@ -451,7 +459,7 @@ button1.addEventListener("click", function(){
 });
 
 button2.addEventListener("click", function(){
-    localStorage.removeItem(document.getElementById('optionsnote').innerText)
+    localStorage.removeItem(document.getElementById('optionsnote').innerHTML)
     document.getElementById('optionsnote').remove()
     node.id = 'Note'
     popup.close()
@@ -467,5 +475,3 @@ function unselectText(){
       }
       
 }
-
-
