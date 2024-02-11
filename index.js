@@ -1,3 +1,20 @@
+const apiUrl = 'https://api.brandfetch.io/v1/company/random';
+
+fetch(apiUrl, {
+  headers: {
+    'Authorization': 'Bearer 7exwaJeHpzXXHXM4UcwpJcGTE1dWoekRPoSJDddOOJo=', // Replace with your actual API key
+  },
+})
+  .then(response => response.json())
+  .then(data => {
+    const companyName = data.name;
+    const companyLogoUrl = data.logo_url;
+
+    console.log('Company Name:', companyName);
+    console.log('Company Logo URL:', companyLogoUrl);
+  })
+  .catch(error => console.error('Error:', error));
+
 fetch('index.html')
     .then(response => response.text())
     .then(text => {
